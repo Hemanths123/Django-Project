@@ -1,0 +1,34 @@
+{% extends "home/index.html" %}
+
+{% block start %}
+
+
+<div class="container mt-5">
+    <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2>Login</h2><hr>
+        <div>
+            {% if messages %}
+            <div class="alert alert-primary" role="alert">
+            {% for message in messages %}
+            {{messages}}
+            {% endfor %}
+        </div>
+        {% endif %}
+            <label for="exampleInputPassword1">Username</label>
+            <input type="text" required name="username" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" required name="password" class="form-control">
+          </div>
+          <p>Don't have an account?<a href="/register/">Register</a></p>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+        </div>
+      </div>
+      
+</div>
+
+
+{% endblock %}
